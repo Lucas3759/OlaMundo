@@ -29,6 +29,11 @@
             var r = (m1 + m2 + m3) / 3
             var res = document.getElementById('res')
             res.innerHTML = `A sua média é ${r}.`
+            if (r < 6) {
+                res.innerHTML += 'Você foi <strong>REPROVADO</strong>.'
+            } else {
+                res.innerHTML += 'Você foi <strong>aprovado</strong>!!.'
+            }
         }
     </script>
 </body>
