@@ -25,9 +25,10 @@
             var txt = window.document.getElementById('nome')
             var res = window.document.getElementById('res')
             var pais = (txt.value)
+            pais = pais.toUpperCase()
             res.innerHTML = `<p>Você nasceu em ${pais}.</p>`
 
-            if (pais == 'Brasil') {
+            if (pais == 'BRASIL') {
                 res.innerHTML += '<p>Você é brasileiro(a).</p>'
             } else {
                 res.innerHTML += '<p>Você é estrangeiro(a).</p>'
