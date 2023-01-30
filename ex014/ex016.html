@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modelo de Exercício</title>
+   <style>
+    body {
+        background-color: rgb(68, 68, 255);
+    }
+    header {
+        font: normal 15pt Arial;
+    }
+    section {
+        background: white;
+        border-radius: 10px;
+        padding: 15px;
+        width: 500px;
+        margin: auto;
+        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.452);
+    }
+    footer {
+        color: white;
+        text-align: center;
+        font-style: italic;
+    }
+   </style>
+</head>
+<body>
+    <header>
+        <h1>Vamos contar!!</h1>
+    </header>
+    
+    <section>
+        <div id = 'dados'>
+            <p>inicio: <input type="number" name="txt1" id="txt1"></p>
+            <p>Fim: <input type="number" name="txt2" id="txt2"></p>
+            <p>Passo: <input type="number" name="txt3" id="txt3"></p>
+            <p><input type="button" value="Contar" onclick="Contar()"></p>
+        </div>
+
+        <div id = 'res'>
+            Preparando a contagem...
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; CursoemVideo</p>
+    </footer>
+    <script>
+        function Contar() {
+            var n1 = document.getElementById('txt1')
+            var n2 = document.getElementById('txt2')
+            var n3 = document.getElementById('txt3')
+            var res = document.getElementById('res')
+            var c1 = Number(n1.value)
+            var c2 = Number(n2.value)
+            var c3 = Number(n3.value)
+
+           if (n1.value.length == 0 || n2.value.length == 0 || n3.value.length == 0) {
+            window.alert('[ERRO] Preencha os dados corretamente!')
+           } 
+           res.innerHTML = `Contando: <br> `
+           if (c1 < c2) {
+            while (c1 <= c2) {
+                res.innerHTML += `\u{1F449}${c1}; `
+                c1 += c3
+            }
+           } else {
+            while (c1 >= c2) {
+                res.innerHTML += `\u{1F449}${c1}; `
+                c1 -= c3
+            }  
+           }
+           res.innerHTML += `\u{1f3c1}`
+        }
+    </script>
+</body>
+</html>
